@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { clean, countSelector, decrease, increase, updatedAtSelector } from "./reducers/counter";
+import { clean, countSelector, decrease, increase } from "./reducers/counter";
 
 @Component({
   selector: "app-root",
@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   public count: number = 0;
   
   public count$ = this.store.select(countSelector);
-  public updatedAt$ = this.store.select(updatedAtSelector)
   
   public increase(): void {
     this.store.dispatch(increase());
